@@ -7,13 +7,14 @@ regresi linear untuk variabel dependen `Y` dan independen `X` dengan persamaan
 
 return nilai `A` dan `B`
 
-#Example
+# Example
 
 ```jldoctest
 julia> x = [-1, 0, 1, 2, 3, 4, 5, 6];
 julia> y = [10, 9, 7, 5, 4, 3, 0, -1];
 julia> A,B = reglin(x,y)
 (-1.6071428571428572, 8.642857142857142)
+```
 """
 function reglin(X,Y)
     xmean = mean(X);
