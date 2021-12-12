@@ -2,7 +2,6 @@ module metnum
 
 using LinearAlgebra
 using Statistics
-using Plots
 
 export regpoly, regpower, regulaFalsi, rekons, rekursif, richardson, rkf45
 export romberg, rungekutta, rungekuttasistem, secant
