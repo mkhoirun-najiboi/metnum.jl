@@ -1,4 +1,9 @@
-using Statistics
+"""
+    reglin(X,Y)
+
+regresi linear untuk variabel dependen Y dan independen X
+
+"""
 function reglin(X,Y)
     xmean = mean(X);
     ymean = mean(Y);
