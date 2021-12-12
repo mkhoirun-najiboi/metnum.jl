@@ -2,7 +2,7 @@ name = "metnum"
 uuid = "44dac47c-a70e-11e8-3cff-fbf5f1b7c554"
 license = "MIT"
 authors = ["Mohamad Khoirun Najib <mkhoirun_najib@apps.ipb.ac.id>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
