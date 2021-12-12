@@ -2,10 +2,13 @@
     reglin(X,Y)
 
 regresi linear untuk variabel dependen `Y` dan independen `X` dengan persamaan
+
     y=Ax+B
+
 return nilai `A` dan `B`
 
 #Example
+
 ```jldoctest
 julia> x = [-1, 0, 1, 2, 3, 4, 5, 6];
 julia> y = [10, 9, 7, 5, 4, 3, 0, -1];
