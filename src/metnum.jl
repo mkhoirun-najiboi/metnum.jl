@@ -4,6 +4,14 @@ using LinearAlgebra
 using Statistics
 using Plots
 
+export regpoly, regpower, regulaFalsi, rekons, rekursif, richardson, rkf45
+export romberg, rungekutta, rungekuttasistem, secant
+export taylor, adaptif, backsub, bedaPusat, bisection
+export conGrad, dirichlet, elimGaussNonPivoting, elimGaussWithPivoting
+export euler, findiff, fixpoint, gaussSeidel, gelombang, heun, jacobi
+export kompsimp, komptrap, lagrange, linearshooting, LUdenganP, LUtanpaP
+export newton, newtonRaphson, panas, reglin
+
 include("regpoly.jl")
 include("regpower.jl")
 include("regulaFalsi.jl")
