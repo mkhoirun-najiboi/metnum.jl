@@ -3,9 +3,10 @@
 
 heun adalah fungsi yang digunakan untuk menyelesaikan masalah nilai awal
 dengan metode heun.
-`f` adalah fungsi dari y'=f(t,y)
-`a`, `b` adalah batas interval masalah
-`y0` adalah nilai awal y(a)
+
+`f` adalah fungsi dari y'=f(t,y),
+`a` dan `b` adalah batas interval masalah
+`y0` adalah nilai awal y(a), serta
 `M` adalah banyaknya sub-interval
 
 # Examples
