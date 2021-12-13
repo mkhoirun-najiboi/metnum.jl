@@ -8,6 +8,19 @@ dengan metode heun.
 `y0` adalah nilai awal y(a)
 `M` adalah banyaknya sub-interval
 
+# Examples
+```jldoctest
+julia> heun((t,y)->(t-y)/2,0,3,1,6)
+7×2 Array{Float64,2}:
+ 0.0  1.0
+ 0.5  0.84375
+ 1.0  0.831055
+ 1.5  0.930511
+ 2.0  1.11759
+ 2.5  1.37311
+ 3.0  1.68212
+```
+
 """
 function heun(f,a,b,y0,M)
     M = Int(M)
