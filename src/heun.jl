@@ -1,3 +1,14 @@
+"""
+    heun(f,a,b,y0,M)
+
+heun adalah fungsi yang digunakan untuk menyelesaikan masalah nilai awal
+dengan metode heun.
+`f` adalah fungsi dari y'=f(t,y)
+`a`, `b` adalah batas interval masalah
+`y0` adalah nilai awal y(a)
+`M` adalah banyaknya sub-interval
+
+"""
 function heun(f,a,b,y0,M)
     M = Int(M)
     h = (b-a)/M;
