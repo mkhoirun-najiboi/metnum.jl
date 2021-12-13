@@ -1,11 +1,12 @@
 """
-adaptif(f, a, b; delta=10^-9)
+    adaptif(f, a, b; delta=10^-9)
 
 adalah fungsi yang digunakan untuk mencari nilai integral dari fungsi `f`
 pada interval `[a,b]`. Secara default toleransi yang digunakan adalah `delta=1e-9`
 
 # Examples
 ```jldoctest
+julia> f(x) = 13*(x-x.^2).*exp(-3*x/2);
 
 julia> sol,err,SRmat = adaptif(f,0,4,delta=0.00001);
 
@@ -15,32 +16,23 @@ julia> sol
 julia> err
 2.9680861581356417e-6
 
-julia> SRmat
-20×6 Array{Float64,2}:
- 0.0     0.0625   0.0228717  …  1.52153e-8  1.5625e-7
- 0.0625  0.125    0.0594867     1.31649e-8  1.5625e-7
- 0.125   0.1875   0.084342      1.13722e-8  1.5625e-7
- 0.1875  0.25     0.0996986     9.80639e-9  1.5625e-7
- 0.25    0.375    0.216719      2.50545e-7  3.125e-7
- 0.375   0.5      0.206462   …  1.84024e-7  3.125e-7
- 0.5     0.625    0.171505      1.33805e-7  3.125e-7
- 0.625   0.75     0.124333      9.61076e-8  3.125e-7
- 0.75    0.875    0.0732445     6.79932e-8  3.125e-7
- 0.875   1.0      0.0235284     4.71839e-8  3.125e-7
- 1.0     1.125   -0.0216607  …  3.19179e-8  3.125e-7
- 1.125   1.25    -0.060651      2.0837e-8   3.125e-7
- 1.25    1.5     -0.210811      3.17143e-7  6.25e-7
- 1.5     2.0     -0.60551       3.19486e-8  1.25e-6
- 2.0     2.25    -0.319856      8.10596e-8  6.25e-7
- 2.25    2.5     -0.300617   …  8.30109e-8  6.25e-7
- 2.5     2.75    -0.270099      7.07089e-8  6.25e-7
- 2.75    3.0     -0.234747      5.4474e-8   6.25e-7
- 3.0     3.5     -0.363888      1.03699e-6  1.25e-6
- 3.5     4.0     -0.243134      4.10779e-7  1.25e-6
+julia> SRmat 
+20×5 Array{Float64,2}:
+ 0.0     0.0625   0.0228718  1.52153e-8  1.5625e-7
+ 0.0625  0.125    0.0594869  1.31649e-8  1.5625e-7
+ 0.125   0.1875   0.0843421  1.13722e-8  1.5625e-7
+ 0.1875  0.25     0.0996987  9.80639e-9  1.5625e-7
+ ⋮
+ 2.5     2.75    -0.2701     7.07089e-8  6.25e-7
+ 2.75    3.0     -0.234747   5.4474e-8   6.25e-7
+ 3.0     3.5     -0.363898   1.03699e-6  1.25e-6
+ 3.5     4.0     -0.243138   4.10779e-7  1.25e-6
 ```
+`SRmat` adalah matriks yang berisi sub-interval (kolom 1 dan 2), nilai integral
+pada sub-interval (kolom 3), galat integral numerik (kolom 4), dan toleransi pada
+sub-interval (kolom 5).
 
 """
-
 function adaptif(f, a, b; delta=10^-9)
   iterating = 0;
   done = 1;
@@ -85,7 +77,7 @@ function adaptif(f, a, b; delta=10^-9)
   end
   sol = sum(SRmat[:,4]);
   err = sum(abs.(SRmat[:,5]));
-  SRmat = SRmat[1:m,:];
+  SRmat = SRmat[1:m,[1,2,4,5,6]];
   return sol, err, SRmat
 end
 
