@@ -27,7 +27,7 @@ export taylor, adaptif, backsub, bedaPusat, bisection
 export conGrad, dirichlet, elimGaussNonPivoting, elimGaussWithPivoting
 export euler, findiff, fixpoint, gaussSeidel, gelombang, heun, jacobi
 export kompsimp, komptrap, lagrange, linearshooting, LUdenganP, LUtanpaP
-export newton, newtonRaphson, panas, reglin
+export newton, newtonRaphson, panas, reglin, mulaipraktikum
 
 include("regpoly.jl")
 include("regpower.jl")
