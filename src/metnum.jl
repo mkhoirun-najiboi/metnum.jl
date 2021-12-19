@@ -1,3 +1,19 @@
+"""
+    metnum.jl
+
+Modul ini berisi metode untuk menyelesaikan
+
+1. Akar pertaksamaan tak-linear: `bisection`, `regulaFalsi`, `fixpoint`, `newtonRaphson`, `secant`
+2. SPL langsung: `backsub`, `elimGaussNonPivoting`, `elimGaussWithPivoting`, `LUtanpaP`, `LUdenganP`
+3. SPL iteratif: `jacobi`, `gaussSeidel`, `rekons` ,`conGrad`
+4. Interpolas: `lagrange`, `newton`
+5. Regresi: `reglin`, `regpower`, `regpoly`
+6. Turunan: `bedaPusat`, `richardson`
+7. Integral: `komptrap`, `kompsimp`, `rekursif`, `romberg`, `adaptif`
+8. PDB dengan MNA: `euler`, `heun`, `taylor`, `rungekutta`, `rungekuttasistem`, `rkf45`
+9. PDB dengan MNB: `linearshooting`, `findiff`
+10. PDP: `gelombang`, `panas`, `dirichlet`
+"""
 module metnum
 
 using LinearAlgebra

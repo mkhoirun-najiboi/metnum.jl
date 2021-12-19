@@ -2,7 +2,8 @@
     adaptif(f, a, b; delta=10^-9)
 
 adalah fungsi yang digunakan untuk mencari nilai integral dari fungsi `f`
-pada interval `[a,b]`. Secara default toleransi yang digunakan adalah `delta=1e-9`
+pada interval `[a,b]` menggunakan aturan kuadratur adaptif.
+Secara default toleransi yang digunakan adalah `delta=1e-9`.
 
 # Examples
 ```jldoctest
@@ -16,7 +17,7 @@ julia> sol
 julia> err
 2.9680861581356417e-6
 
-julia> SRmat 
+julia> SRmat
 20×5 Array{Float64,2}:
  0.0     0.0625   0.0228718  1.52153e-8  1.5625e-7
  0.0625  0.125    0.0594869  1.31649e-8  1.5625e-7
@@ -28,7 +29,8 @@ julia> SRmat
  3.0     3.5     -0.363898   1.03699e-6  1.25e-6
  3.5     4.0     -0.243138   4.10779e-7  1.25e-6
 ```
-`SRmat` adalah matriks yang berisi sub-interval (kolom 1 dan 2), nilai integral
+return solusi `sol`, estimasi kesalahan `err`, dan
+matriks `SRmat` yang berisi sub-interval (kolom 1 dan 2), nilai integral
 pada sub-interval (kolom 3), galat integral numerik (kolom 4), dan toleransi pada
 sub-interval (kolom 5).
 

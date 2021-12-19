@@ -1,3 +1,29 @@
+"""
+    rkf45(f,a,b,y0,M,delta)
+berisi program untuk mencari solusi persamaan
+differensial `y' = f(t,y)` dengan `y(a) = y0` pada interval `[a, b]`. Program ini secara
+default berisi 6 masukan, yaitu fungsi `f(t,y)`,
+titik ujung interval penyelesaian `[a,b]`,
+nilai awal `y0`, jumlah sub-interval `M` dan nilai toleransi error `delta`
+
+# Example
+```jl
+julia> f(t,y) = 1+y^2;
+
+julia> sol = rkf45(f,0,1.4,0,7,2e-5)
+14×2 Array{Float64,2}:
+ 0.0     0.0
+ 0.2     0.20271
+ 0.6     0.684165
+ 0.8     1.02968
+ ⋮
+ 1.35    4.45586
+ 1.375   5.04273
+ 1.3875  5.39534
+ 1.4     5.79895
+```
+return solusi masalah nilai awal `sol`.
+"""
 function rkf45(f,a,b,y0,M,delta)
   M = round(M)
   a2=1/4;b2=1/4;a3=3/8;b3=3/32;c3=9/32;
@@ -8,9 +34,9 @@ function rkf45(f,a,b,y0,M,delta)
   n1=25/216;n3=1408/2565;n4=2197/4104;n5=-1/5;
   big=1e15;
   h=(b-a)/M;
-  hmin=h/64; 
-  hmax=h*64; 
-  maxi=200; 
+  hmin=h/64;
+  hmax=h*64;
+  maxi=200;
   j=1;
   Y = y0;
   T = a;
@@ -33,7 +59,7 @@ function rkf45(f,a,b,y0,M,delta)
     err=abs(r1*k1+r3*k3+r4*k4+r5*k5+r6*k6);
     ynew=Y[j]+n1*k1+n3*k3+n4*k4+n5*k5;
     #% Perbarui ukuran langkah
-    if (err<delta) || (h<2*hmin) 
+    if (err<delta) || (h<2*hmin)
       Y = [Y; ynew];
       if (T[j]+h)>br
         T = [T; b];

@@ -1,13 +1,10 @@
 """
     heun(f,a,b,y0,M)
 
-heun adalah fungsi yang digunakan untuk menyelesaikan masalah nilai awal
-dengan metode heun.
-
-`f` adalah fungsi dari y'=f(t,y),
-`a` dan `b` adalah batas interval masalah
-`y0` adalah nilai awal y(a), serta
-`M` adalah banyaknya sub-interval
+berisi program untuk mencari solusi persamaan differensial `y'=f(t,y)`
+dengan masalah nilai awal `y(a) = y0` pada interval `[a, b]`. Program ini secara default
+berisi 5 masukan, yaitu fungsi `f(t,y)`, titik ujung interval penyelesaian `[a,b]`, nilai awal
+`y0`, dan jumlah sub-interval `M`.
 
 # Examples
 ```jldoctest
@@ -21,7 +18,7 @@ julia> heun((t,y)->(t-y)/2,0,3,1,6)
  2.5  1.37311
  3.0  1.68212
 ```
-
+return solusi masalah nilai awal `sol`.
 """
 function heun(f,a,b,y0,M)
     M = Int(M)
