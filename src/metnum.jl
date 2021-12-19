@@ -66,5 +66,6 @@ include("newton.jl")
 include("newtonRaphson.jl")
 include("panas.jl")
 include("reglin.jl")
+include("mulaipraktikum.jl")
 
 end
